@@ -1,8 +1,6 @@
 @extends('layouts.main')
 
 @section('container')
-    <link rel="stylesheet" href="{{ asset('css/home/home.css') }}">
-
     <div class="row justify-content-center">
         <div class="col-11 mt-5 mb-4">
             <div class="col-6 d-flex flex-row" style="height: 60px;">
@@ -14,7 +12,9 @@
                         <p class="m-0 fw-bold">{{ $writer->name }}</p>
                     </div>
                     <div class="mt-auto">
-                        <p class="m-0">Spesialis {{ $category->name }}</p>
+                        @foreach ($category as $c)
+                            <p class="m-0">Spesialis {{ $c->name }}</p>
+                        @endforeach
                     </div>
                 </div>
             </div>

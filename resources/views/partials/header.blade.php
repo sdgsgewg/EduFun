@@ -12,15 +12,16 @@
                         href="{{ route('home') }}">Home</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle {{ Request::is('category*') ? 'active' : '' }}" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
+                    <a class="nav-link dropdown-toggle {{ Request::is('category*') ? 'active' : '' }}" href="#"
+                        role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Category
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{ route('category.index', ['id' => 1]) }}">Interactive
-                                Multimedia</a></li>
-                        <li><a class="dropdown-item" href="{{ route('category.index', ['id' => 2]) }}">Software
-                                Engineering</a></li>
+                        @foreach ($categories as $c)
+                            <li><a class="dropdown-item"
+                                    href="{{ route('category.index', ['category' => $c->slug]) }}">{{ $c->name }}</a>
+                            </li>
+                        @endforeach
                     </ul>
                 </li>
                 <li class="nav-item">
@@ -32,7 +33,8 @@
                         href="{{ route('about') }}">About Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('popular') ? 'active' : '' }}" aria-current="page" href="{{ route('popular') }}">Popular</a>
+                    <a class="nav-link {{ Request::is('popular') ? 'active' : '' }}" aria-current="page"
+                        href="{{ route('popular') }}">Popular</a>
                 </li>
             </ul>
         </div>

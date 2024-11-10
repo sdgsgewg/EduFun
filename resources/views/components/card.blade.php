@@ -18,7 +18,7 @@
         </div>
 
         <div class="d-flex mt-auto align-items-end justify-content-end">
-            <a href="{{ route('category.detail', ['id' => $cd->category->id, 'cd' => $cd->slug]) }}"
+            <a href="{{ route('category.detail', ['cd' => $cd->slug]) }}"
                 class="btn btn-primary rounded-5 py-1 px-5">read
                 more...</a>
         </div>

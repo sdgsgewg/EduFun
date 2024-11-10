@@ -1,8 +1,6 @@
 @extends('layouts.main')
 
 @section('container')
-    <link rel="stylesheet" href="{{ asset('css/home/home.css') }}">
-
     <div class="row justify-content-center">
         <div class="col-11 mt-5">
             <h2 class="fw-bold">Popular</h2>

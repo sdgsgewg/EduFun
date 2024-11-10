@@ -11,7 +11,8 @@
             @foreach ($writers as $w)
                 @foreach ($categories as $c)
                     @if ($c->writer->id == $w->id)
-                        <a class="text-decoration-none text-black" href="{{ route('writers.detail', ['w_id' => $w->id, 'c_id' => $c->id]) }}">
+                        <a class="text-decoration-none text-black"
+                            href="{{ route('writers.detail', ['writer' => $w->username]) }}">
                             @include('components.writer-card')
                         </a>
                     @endif

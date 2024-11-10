@@ -3,7 +3,7 @@
 @section('container')
     <div class="row justify-content-center">
         <div class="col-11 mt-5">
-            <h2>{{ $category->name }}</h2>
+            <h2>{{ $cd->category->name }}</h2>
         </div>
         <div class="col-11 mt-2 mb-5 d-flex flex-column">
             <div class="d-flex flex-column mb-4">

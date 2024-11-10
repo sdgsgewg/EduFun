@@ -19,12 +19,13 @@ class WriterController extends Controller
         ]);
     }
 
-    public function show($w_id, $c_id) {
-        $writer = Writer::find($w_id);
-        $category = Category::find($c_id);
-        $category_details = CategoryDetail::where('category_id', $c_id)->get();
+    public function show(Writer $writer) {
+        $categories = Category::all();
+        $category = Category::where('writer_id', $writer->id)->get();
+        $category_details = CategoryDetail::where('category_id', $category[0]['id'])->get();
 
         return view('writer.detail', [
+            'categories' => $categories,
             'writer' => $writer,
             'category' => $category,
             'category_details' => $category_details,

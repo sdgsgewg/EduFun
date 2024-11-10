@@ -16,10 +16,12 @@ class WriterSeeder extends Seeder
     {
         WriterModel::create([
             'name' => 'Prasetya Manullang M.Pd',
+            'username' => 'prasetya-manullang',
             'image' => 'img/1.jpg'
         ]);
         WriterModel::create([
             'name' => 'Yuliana Utami S.I.Kom',
+            'username' => 'yuliana-utami',
             'image' => 'img/2.jpg'
         ]);
     }
